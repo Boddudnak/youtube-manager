@@ -1,0 +1,7 @@
+{
+  "channel_id": "UCxxxxxxxxxxxxxxxxxxxxxx",
+  "title": "Your Channel",
+  "handle": "@yourchannel",
+  "oauth_dir": "~/.youtube-api",
+  "_note": "Copy to channel.json. Every API write checks that the signed-in token belongs to channel_id and aborts otherwise."
+}

@@ -1,0 +1,27 @@
+{
+  "_note": "Game profiles. 'aliases' match capture filenames and on-screen text. New games are learned by `ytm.py identify` or added here.",
+  "games": [
+    {
+      "name": "Example Game",
+      "short": "EXG",
+      "aliases": [
+        "example game"
+      ],
+      "hashtags": [
+        "#ExampleGame"
+      ],
+      "tags": [
+        "example game gameplay",
+        "example game walkthrough"
+      ],
+      "missions": [
+        {
+          "number": 1,
+          "name": "First Mission",
+          "source": "example"
+        }
+      ],
+      "characters": []
+    }
+  ]
+}

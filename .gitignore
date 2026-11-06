@@ -1,0 +1,17 @@
+# Your own recordings, renders, analytics, backups and keys never get committed.
+inbox/*
+!inbox/.gitkeep
+library/
+data/
+backups/
+thumbnails-in/
+assets/
+tools/voice/venv/
+config/channel.json
+config/*.jpg
+config/*.png
+client_secret*.json
+token*.json
+.claude/settings.local.json
+__pycache__/
+*.pyc

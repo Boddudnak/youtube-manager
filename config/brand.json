@@ -1,0 +1,192 @@
+{
+  "name": "YOURCHANNEL",
+  "display_name": "Your Channel",
+  "handle": "@yourchannel",
+  "tagline": "Your tagline.",
+  "style": "No-commentary, cinematic 4K gameplay. Short punchy hooks, game abbreviation after a pipe.",
+  "colors": {
+    "background": "#0A0A0F",
+    "primary": "#E53935",
+    "secondary": "#1E88E5",
+    "silver": "#E6E6F0",
+    "text": "#FFFFFF",
+    "stroke": "#000000"
+  },
+  "fonts": {
+    "headline": "C:/Windows/Fonts/impact.ttf",
+    "headline_alt": "C:/Windows/Fonts/ariblk.ttf",
+    "label": "C:/Windows/Fonts/bahnschrift.ttf"
+  },
+  "logo": "config/avatar.jpg",
+  "watermark": {
+    "shorts": true,
+    "long_form": false,
+    "size_px": 110,
+    "opacity": 0.85,
+    "position": "bottom-right"
+  },
+  "titles": {
+    "long_pattern": "{hook} {emoji} | {game_short} – {mission} | 4K PS5",
+    "short_pattern": "{hook} {emoji} | {game_short} #Shorts",
+    "rules": [
+      "Never a bare game name as the whole title.",
+      "Hook first, game after the pipe.",
+      "At most 2 emoji; flag emoji only when the location is actually in the footage.",
+      "#Shorts only on Shorts, never on long-form (strip_shorts_tag.py exists because of this).",
+      "Mission names and numbers must match what is on screen."
+    ]
+  },
+  "hashtags": {
+    "max_in_description": 5,
+    "always": [],
+    "long": [
+      "#PS5"
+    ],
+    "short": [
+      "#Shorts"
+    ],
+    "why": "YouTube shows only 3 hashtags above the title; use 3-5 precise, video-related hashtags. Brand name goes in tags, not hashtags."
+  },
+  "tags": {
+    "brand": [
+      "yourchannel"
+    ],
+    "long": [
+      "ps5 gameplay",
+      "4k hdr gameplay",
+      "no commentary gameplay",
+      "campaign walkthrough"
+    ],
+    "short": [
+      "gaming shorts",
+      "ps5 shorts"
+    ],
+    "max_chars": 480
+  },
+  "description": {
+    "footer": "🎮 Your Channel | Your tagline.\nRecorded in 4K. No commentary.\nhttps://www.youtube.com/@yourchannel",
+    "short_footer": "Full mission on the channel 👉 @yourchannel"
+  },
+  "upload": {
+    "default_privacy": "private",
+    "allowed_privacy_before_review": [
+      "private",
+      "unlisted"
+    ],
+    "category_id": "20",
+    "language": "en",
+    "made_for_kids": false,
+    "notify_subscribers": true,
+    "contains_synthetic_media": false,
+    "synthetic_voice_disclosure": true,
+    "synthetic_voice_rule": "Any upload whose job has cloned-voice narration (ytm.py voice say --job) is uploaded with containsSyntheticMedia=true - YouTube's 'altered or synthetic content' disclosure. A realistic AI voice of a real person narrating requires it. Never turn this off."
+  },
+  "shorts": {
+    "max_per_recording": 15,
+    "posts_per_day": 3,
+    "post_times_utc": [
+      "01:00",
+      "13:30",
+      "20:00"
+    ],
+    "post_times_why": "Set these from YouTube Studio > Analytics > Audience > 'When your viewers are on YouTube'.",
+    "min_seconds": 15,
+    "target_seconds": 40,
+    "max_seconds": 58,
+    "width": 1080,
+    "height": 1920,
+    "default_layout": "square",
+    "hook_seconds": 3.0,
+    "loudness_lufs": -14
+  },
+  "thumbnail": {
+    "width": 1280,
+    "height": 720,
+    "max_words": 3,
+    "max_bytes": 2000000,
+    "corners": {
+      "top_left": "PS5",
+      "top_left_logo": "config/ps5_logo.png",
+      "top_right": "4K HDR",
+      "top_right_sdr": "4K",
+      "size": 60,
+      "why": "4K HDR top-right in white, PS5 logo top-left. HDR only when the recording is HDR (accuracy). Drop a white PS5 PNG at config/ps5_logo.png to use it instead of the PS5 text."
+    },
+    "master_long": [
+      3840,
+      2160
+    ],
+    "master_short": [
+      2160,
+      3840
+    ],
+    "quality_rule": "Thumbnails are made at full 4K; the uploaded JPEG is the same image compressed to fit max_bytes."
+  },
+  "seo": {
+    "rules": [
+      "Long-form title: the searched keyword in the first ~40 characters (game + what people search), then mission name, then '4K'.",
+      "Shorts title: hook first, then the searched keyword, then #Shorts.",
+      "First description line = the search phrase in plain words, accurate to the footage.",
+      "Tags: 10-15 real search phrases from data/analytics/search-terms-latest.json, no padding.",
+      "Long-form: chapters + link to the series playlist in the description.",
+      "Never put a keyword that is not in the footage (accuracy rule wins over SEO)."
+    ],
+    "evidence": "Fill in from your own YouTube search-terms report."
+  },
+  "grade": {
+    "brightness": 0.02,
+    "contrast": 1.06,
+    "saturation": 1.15,
+    "gamma": 1.0,
+    "sharpen": 0.35,
+    "encoder": [
+      "hevc_amf",
+      "-quality",
+      "quality",
+      "-rc",
+      "vbr_peak",
+      "-b:v",
+      "45M",
+      "-maxrate",
+      "60M"
+    ],
+    "encoder_why": "Benchmark, 20 s 4K60 SDR @45M: hevc_amf 1.16x realtime SSIM 0.99806; libx265 medium 0.21x SSIM 0.99791. Pick the hardware encoder your GPU supports.",
+    "why": "Optional SDR-only look (eq + unsharp). Applied only after the user approves the BEFORE/AFTER preview for a job. Output stays SDR bt709 - never labelled HDR."
+  },
+  "engagement": {
+    "rule": "Never beg for likes, subscribes or the bell - in titles, descriptions, pinned comments, on-screen text, stream overlays or voiceover. Earn the subscribe with value; invite opinions instead.",
+    "do": [
+      "ask a real question about the moment (stealth or loud? would you have saved him?)",
+      "pin a comment that starts a conversation, not a CTA",
+      "reply to comments like a person",
+      "live: let chat decide routes/loadouts, greet first-time chatters by name, react for real",
+      "point to the next mission/playlist as a service, not a demand",
+      "Community posts: polls on which game/mission next"
+    ],
+    "dont": [
+      "'like and subscribe'",
+      "'smash the like button'",
+      "'hit the bell'",
+      "'subscribe for more' in footers or overlays"
+    ],
+    "why": "Engage with the audience instead of asking for subscriptions and likes."
+  },
+  "voice": {
+    "engine": "chatterbox (local, CPU)",
+    "reference": "data/voice/ref.wav (a clean 10-25 s sample of your own voice)",
+    "speed": 1.15,
+    "style": "Short, punchy narration with reactions. Tag every line [calm] [hook] [react] or [hype].",
+    "energy": 1.3,
+    "tries": 4,
+    "min_accuracy": 0.93
+  },
+  "longform": {
+    "publish_days": [
+      "Sun",
+      "Mon",
+      "Tue"
+    ],
+    "publish_time_utc": "12:00",
+    "publish_why": "Pick days/time from your own Studio audience heatmap, 1-2 h before the peak."
+  }
+}
